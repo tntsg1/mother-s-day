@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>母亲节礼物 - 致我最爱的老妈</title>
+    <style>
+        body {
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(135deg, #f5f7fa, #c3cfe2);
+            font-family: 'Arial', sans-serif;
+            overflow: hidden;
+        }
+        .card {
+            background: #fff;
+            border-radius: 15px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            width: 350px;
+            padding: 20px;
+            text-align: center;
+            position: relative;
+            animation: slideIn 1s ease;
+        }
+        @keyframes slideIn {
+            from { transform: translateY(-100px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+        h1 {
+            color: #e91e63;
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+        p {
+            color: #333;
+            font-size: 16px;
+            line-height: 1.5;
+            margin: 10px 0;
+        }
+        .heart {
+            color: #e91e63;
+            font-size: 20px;
+            animation: pulse 1.5s infinite;
+            display: inline-block;
+        }
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.2); }
+            100% { transform: scale(1); }
+        }
+        button {
+            background: #e91e63;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background 0.3s;
+        }
+        button:hover {
+            background: #c2185b;
+        }
+        .confetti {
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            background: #e91e63;
+            opacity: 0.7;
+            animation: fall 4s linear infinite;
+        }
+        @keyframes fall {
+            0% { transform: translateY(-100vh) rotate(0deg); }
+            100% { transform: translateY(100vh) rotate(360deg); }
+        }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <h1>母亲节快乐，老妈！</h1>
+        <p>亲爱的老妈，<br>您是我生命中最重要的人，您的爱像阳光一样温暖我。感谢您无私的付出和无尽的关怀！<br>在这个特别的日子里，小迪想说：<span class="heart">♥</span> 我爱你！</p>
+        <button onclick="showConfetti()">送您一束惊喜！</button>
+    </div>
+
+    <script>
+        function showConfetti() {
+            for (let i = 0; i < 50; i++) {
+                let confetti = document.createElement('div');
+                confetti.className = 'confetti';
+                confetti.style.left = Math.random() * 100 + 'vw';
+                confetti.style.background = ['#e91e63', '#f06292', '#ff8a80'][Math.floor(Math.random() * 3)];
+                confetti.style.animationDelay = Math.random() * 2 + 's';
+                document.body.appendChild(confetti);
+                setTimeout(() => confetti.remove(), 4000);
+            }
+        }
+    </script>
+</body>
+</html>
